@@ -4,7 +4,7 @@ public class Titulo {
     private String nome;
     private String genero;
     private int anoLancamento;
-    boolean incluidoNoPlano;
+    private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
