@@ -1,3 +1,5 @@
+import br.com.screenmatch.calculos.FiltroRecomendacao;
+import br.com.screenmatch.modelos.Episodio;
 import br.com.screenmatch.modelos.Filme;
 import br.com.screenmatch.modelos.Serie;
 import br.com.screenmatch.calculos.CalculadoraTemporal;
@@ -12,9 +14,9 @@ public class Principal {
         filme1.setDuracaoEmMinutos(180);
         filme1.setIncluidoNoPlano(true);
 
-        filme1.avaliar(8);
-        filme1.avaliar(10);
-        filme1.avaliar(9);
+        filme1.avaliar(5);
+        filme1.avaliar(2);
+        filme1.avaliar(3);
         filme1.exibirFichaTecnica();
 
         IO.println();
@@ -26,9 +28,9 @@ public class Principal {
         filme2.setDuracaoEmMinutos(200);
         filme2.setIncluidoNoPlano(false);
 
-        filme2.avaliar(8);
-        filme2.avaliar(10);
-        filme2.avaliar(9);
+        filme2.avaliar(6);
+        filme2.avaliar(5);
+        filme2.avaliar(7);
         filme2.exibirFichaTecnica();
 
         IO.println();
@@ -55,6 +57,20 @@ public class Principal {
         calculadora.inclui(filme2);
         calculadora.inclui(serie1);
         IO.println("Tempo total assistido na plataforma: " + calculadora.getTempoTotal() + "min");
+
+        IO.println();
+
+        Episodio episodio1 = new Episodio();
+        episodio1.setNumero(1);
+        episodio1.setSerie(serie1);
+        episodio1.setTitulo("Pilot");
+        episodio1.setDescricao("Walter White, um professor de química do ensino médio, descobre que tem câncer de pulmão e decide produzir e vender metanfetamina para garantir o futuro financeiro de sua família. Ele se une a um ex-aluno, Jesse Pinkman, e juntos entram no perigoso mundo do tráfico de drogas, enfrentando desafios e consequências inesperadas.");
+        episodio1.setVisualizacoes(5000);
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(filme1);
+        filtro.filtra(filme2);
+        filtro.filtra(episodio1);
 
     }
 }
