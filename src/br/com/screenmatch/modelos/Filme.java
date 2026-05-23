@@ -17,6 +17,10 @@ public class Filme extends Titulo implements Classificacao {
     public int getClassificacao() {
         return (int) mediaDasAvaliacoes() / 2;
     }
+
+    public String toString() {
+        return getNome() + " [" + getAnoLancamento() + "]";
+    }
 }
 
 
