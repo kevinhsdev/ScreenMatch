@@ -21,7 +21,7 @@ public class Titulo {
         this.anoLancamento = anoLancamento;
     }
 
-    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
+    public void setInclusoNoPlano(boolean incluidoNoPlano) {
         this.incluidoNoPlano = incluidoNoPlano;
     }
 

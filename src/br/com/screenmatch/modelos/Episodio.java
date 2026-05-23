@@ -9,6 +9,13 @@ public class Episodio implements Classificacao {
     private int numero;
     private int visualizacoes;
 
+    public Episodio(int numero, Serie serie, String titulo, String descricao) {
+        this.numero = numero;
+        this.serie = serie;
+        this.titulo = titulo;
+        this.descricao = descricao;
+    }
+
     public String getTitulo() {
         return titulo;
     }
@@ -57,4 +64,5 @@ public class Episodio implements Classificacao {
             return 3;
         }
     }
+
 }

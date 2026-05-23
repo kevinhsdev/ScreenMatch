@@ -7,13 +7,7 @@ import java.util.*;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme filme1 = new Filme();
-
-        filme1.setNome("O Poderoso Chefão");
-        filme1.setGenero("Crime, Drama");
-        filme1.setAnoLancamento(1995);
-        filme1.setDuracaoEmMinutos(180);
-        filme1.setIncluidoNoPlano(true);
+        Filme filme1 = new Filme("O Poderoso Chefão", "Crime, Drama", 1995, 180, true);
 
         filme1.avaliar(5);
         filme1.avaliar(2);
@@ -22,12 +16,7 @@ public class Principal {
 
         IO.println();
 
-        Filme filme2 = new Filme();
-        filme2.setNome("Avatar");
-        filme2.setGenero("Ação, Aventura");
-        filme2.setAnoLancamento(2024);
-        filme2.setDuracaoEmMinutos(200);
-        filme2.setIncluidoNoPlano(false);
+        Filme filme2 = new Filme("Avatar", "Ação, Aventura", 2024, 200, false);
 
         filme2.avaliar(6);
         filme2.avaliar(5);
@@ -36,14 +25,7 @@ public class Principal {
 
         IO.println();
 
-        Serie serie1 = new Serie();
-        serie1.setNome("Breaking Bad");
-        serie1.setGenero("Crime, Drama");
-        serie1.setAnoLancamento(2010);
-        serie1.setMinutosPorEpisodio(60);
-        serie1.setEpisodiosPorTemporada(13);
-        serie1.setTemporadas(5);
-        serie1.setIncluidoNoPlano(true);
+        Serie serie1 = new Serie("Breaking Bad", "Crime, Drama", 2010, 60, 13, 5, true);
 
         serie1.avaliar(7);
         serie1.avaliar(10);
@@ -61,11 +43,8 @@ public class Principal {
 
         IO.println();
 
-        Episodio episodio1 = new Episodio();
-        episodio1.setNumero(1);
-        episodio1.setSerie(serie1);
-        episodio1.setTitulo("Pilot");
-        episodio1.setDescricao("Walter White, um professor de química do ensino médio, descobre que tem câncer de pulmão e decide produzir e vender metanfetamina para garantir o futuro financeiro de sua família. Ele se une a um ex-aluno, Jesse Pinkman, e juntos entram no perigoso mundo do tráfico de drogas, enfrentando desafios e consequências inesperadas.");
+        Episodio episodio1 = new Episodio(1, serie1, "Pilot", "Walter White, um professor de química do ensino médio, descobre que tem câncer de pulmão e decide produzir e vender metanfetamina para garantir o futuro financeiro de sua família. Ele se une a um ex-aluno, Jesse Pinkman, e juntos entram no perigoso mundo do tráfico de drogas, enfrentando desafios e consequências inesperadas.");
+
         episodio1.setVisualizacoes(5000);
 
         FiltroRecomendacao filtro = new FiltroRecomendacao();
@@ -75,12 +54,8 @@ public class Principal {
 
         IO.println();
 
-        Filme filme3 = new Filme();
-        filme3.setNome("Maze Runner");
-        filme3.setGenero("Ação, Aventura");
-        filme3.setAnoLancamento(2016);
-        filme3.setDuracaoEmMinutos(120);
-        filme3.setIncluidoNoPlano(true);
+        Filme filme3 = new Filme("Maze Runner", "Ação, Suspense", 2016, 120, true);
+
         filme3.avaliar(8.5);
         filme3.avaliar(9.5);
         filme3.avaliar(10);
