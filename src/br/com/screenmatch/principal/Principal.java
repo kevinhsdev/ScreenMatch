@@ -1,3 +1,5 @@
+package br.com.screenmatch.principal;
+
 import br.com.screenmatch.calculos.FiltroRecomendacao;
 import br.com.screenmatch.modelos.Episodio;
 import br.com.screenmatch.modelos.Filme;
@@ -67,11 +69,10 @@ public class Principal {
         listaDeFilmes.add(filme3);
         listaDeFilmes.add(filme1);
         listaDeFilmes.add(filme2);
+
         IO.println("A lista possui " + listaDeFilmes.size() + " filmes no momento...");
         IO.println("O primeiro filme da lista é " + listaDeFilmes.getFirst().getNome());
         IO.println(listaDeFilmes);
-
-
 
     }
 }

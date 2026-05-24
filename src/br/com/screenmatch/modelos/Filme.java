@@ -5,10 +5,12 @@ import br.com.screenmatch.calculos.Classificacao;
 public class Filme extends Titulo implements Classificacao {
     private String diretor;
 
+    public Filme(String nome, String genero, int anoLancamento){
+        super(nome, genero, anoLancamento);
+    }
+
     public Filme(String nome,String genero, int anoLancamento, int duracaoEmMinutos, boolean inclusoNoPlano) {
-        this.setNome(nome);
-        this.setGenero(genero);
-        this.setAnoLancamento(anoLancamento);
+        super(nome, genero, anoLancamento);
         this.setDuracaoEmMinutos(duracaoEmMinutos);
         this.setInclusoNoPlano(inclusoNoPlano);
     }
@@ -26,9 +28,6 @@ public class Filme extends Titulo implements Classificacao {
         return (int) mediaDasAvaliacoes() / 2;
     }
 
-    public String toString() {
-        return getNome() + " [" + getAnoLancamento() + "]";
-    }
 }
 
 
