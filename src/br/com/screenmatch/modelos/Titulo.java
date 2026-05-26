@@ -1,8 +1,13 @@
 package br.com.screenmatch.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo implements Comparable<Titulo>{
+    @SerializedName("Title")
     private String nome;
+    @SerializedName("Genre")
     private String genero;
+    @SerializedName("Year")
     private int anoLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
@@ -83,13 +88,17 @@ public class Titulo implements Comparable<Titulo>{
     }
 
     @Override
-    public String toString() {
-        return getNome() + " [" + getAnoLancamento() + "]";
+    public int compareTo(Titulo outroTitulo) {
+        return getNome().compareTo(outroTitulo.getNome());
     }
 
     @Override
-    public int compareTo(Titulo outroTitulo) {
-        return getNome().compareTo(outroTitulo.getNome());
+    public String toString() {
+        return "Titulo{" +
+                "Título: " + nome + '\'' +
+                ", Género: " + genero + '\'' +
+                ", Ano de Lançamento: " + anoLancamento +
+                '}';
     }
 }
 
