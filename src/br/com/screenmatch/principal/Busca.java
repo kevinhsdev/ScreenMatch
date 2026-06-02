@@ -1,7 +1,10 @@
 package br.com.screenmatch.principal;
+import br.com.screenmatch.excecao.ErroDeConversaoDeAnoException;
 import br.com.screenmatch.modelos.Titulo;
 import br.com.screenmatch.modelos.TituloOMDb;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
 import java.net.URI;
@@ -17,6 +20,7 @@ public class Busca {
 
     String endereco = "https://www.omdbapi.com/?t=" + midiaPesquisada + "&apikey=e125cb18";
 
+    try {
     HttpClient client = HttpClient.newHttpClient();
     HttpRequest request = HttpRequest.newBuilder()
         .uri(URI.create(endereco))
@@ -27,9 +31,25 @@ public class Busca {
         String json =  response.body();
         IO.println(json);
 
-        Gson gson = new Gson();
-        TituloOMDb titulo = gson.fromJson(json, TituloOMDb.class);
-        IO.println(titulo);
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .create();
 
+        TituloOMDb tituloOmdb = gson.fromJson(json, TituloOMDb.class);
+        System.out.println(tituloOmdb);
+        //try {
+        Titulo meuTitulo = new Titulo(tituloOmdb);
+        System.out.println("Titulo já convertido");
+        System.out.println(meuTitulo);
+    } catch (NumberFormatException e) {
+        System.out.println("Aconteceu um erro: ");
+        System.out.println(e.getMessage());
+    } catch (IllegalArgumentException e) {
+        System.out.println("Algum erro de argumento na busca, verifique o endereço");
+    } catch (ErroDeConversaoDeAnoException e) {
+        System.out.println(e.getMessage());
+    }
+
+        System.out.println("O programa finalizou corretamente!");
     }
 }
