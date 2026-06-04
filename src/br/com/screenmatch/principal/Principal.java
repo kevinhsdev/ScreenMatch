@@ -9,11 +9,11 @@ import java.util.*;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme filme1 = new Filme("O Poderoso Chefão", "Crime, Drama", 1995, 180, true);
+        Filme filme1 = new Filme("Back to the Future", "Comédia, Aventura", 1985, 180, true);
 
-        filme1.avaliar(5);
-        filme1.avaliar(2);
-        filme1.avaliar(3);
+        filme1.avaliar(7);
+        filme1.avaliar(9);
+        filme1.avaliar(9);
         filme1.exibirFichaTecnica();
 
         IO.println();
