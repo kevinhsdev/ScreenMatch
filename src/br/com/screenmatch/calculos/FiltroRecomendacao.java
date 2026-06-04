@@ -9,7 +9,7 @@ public class FiltroRecomendacao {
         } else if (classificavel.getClassificacao() >= 2) {
             System.out.println("Muito bem avaliado!");
         } else {
-            System.out.println("Coloque na sua lista de desejos, não vai se arrepender!");
+            System.out.println("Coloque na sua lista de desejos!");
         }
     }
 }
