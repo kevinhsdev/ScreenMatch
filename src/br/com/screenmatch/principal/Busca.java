@@ -16,9 +16,9 @@ public class Busca {
     Scanner sc = new Scanner(System.in);
 
     IO.println("Digite o nome do filme ou série que deseja buscar: ");
-    var midiaPesquisada = sc.nextLine();
+    var midia = sc.nextLine();
 
-    String endereco = "https://www.omdbapi.com/?t=" + midiaPesquisada + "&apikey=e125cb18";
+    String endereco = "https://www.omdbapi.com/?t=" + midia + "&apikey=e125cb18";
 
     try {
     HttpClient client = HttpClient.newHttpClient();
