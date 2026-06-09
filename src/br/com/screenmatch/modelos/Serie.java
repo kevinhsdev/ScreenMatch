@@ -6,12 +6,12 @@ public class Serie extends Titulo{
     private int minutosPorEpisodio;
     private boolean ativa;
 
-    public Serie(String titulo, String genero, int anoLancamento){
-        super(titulo, genero, anoLancamento);
+    public Serie(String titulo, int anoLancamento){
+        super(titulo, anoLancamento);
     }
 
     public Serie(String nome, String genero, int anoLancamento, int temporadas, int episodiosPorTemporada, int minutosPorEpisodio, boolean ativa) {
-        super(nome, genero, anoLancamento);
+        super(nome, anoLancamento);
         this.temporadas = temporadas;
         this.episodiosPorTemporada = episodiosPorTemporada;
         this.minutosPorEpisodio = minutosPorEpisodio;

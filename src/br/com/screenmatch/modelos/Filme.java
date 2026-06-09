@@ -5,12 +5,12 @@ import br.com.screenmatch.calculos.Classificacao;
 public class Filme extends Titulo implements Classificacao {
     private String diretor;
 
-    public Filme(String nome, String genero, int anoLancamento){
-        super(nome, genero, anoLancamento);
+    public Filme(String nome, int anoLancamento){
+        super(nome, anoLancamento);
     }
 
     public Filme(String nome,String genero, int anoLancamento, int duracaoEmMinutos, boolean inclusoNoPlano) {
-        super(nome, genero, anoLancamento);
+        super(nome, anoLancamento);
         this.setDuracaoEmMinutos(duracaoEmMinutos);
         this.setInclusoNoPlano(inclusoNoPlano);
     }
